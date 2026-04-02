@@ -5,6 +5,10 @@ mapped_pages:
 
 # Agent version conditions [agent-version-conditions]
 
+::::{note}
+Agent version conditions require Kibana 9.4 or later.
+::::
+
 Integration packages can declare version constraints on Elastic Agent to ensure compatibility when features depend on a specific agent version. There are two ways to define these constraints:
 
 - **Package-level**: the entire package requires a minimum agent version.
@@ -19,6 +23,8 @@ Use the `conditions.agent.version` field in `manifest.yml` to require a minimum 
 
 ```yaml
 conditions:
+  kibana
+    version: '^9.4.0'
   agent:
     version: "^9.3.0"
 ```
@@ -26,7 +32,7 @@ conditions:
 Use this approach when **all** inputs in the package rely on agent capabilities introduced in a specific version.
 
 ::::{note}
-`conditions.agent.version` requires `format_version: 3.6.0` or later in the package manifest.
+`conditions.agent.version` requires `format_version: 3.6.0` or later in the package manifest and Kibana 9.4 or later.
 ::::
 
 

@@ -579,10 +579,12 @@ elastic-package test [pipeline|static|asset|policy|system] -v -g
 
 6. If a package relies on features available only in a specific Elastic Agent version, use an agent version condition. There are two approaches depending on your needs:
 
-    **Package-level** — restricts all inputs; requires `format_version: 3.6.0` or later:
+    **Package-level** — restricts all inputs; requires `format_version: 3.6.0` or later and Kibana 9.4 or later:
 
     ```yaml
     conditions:
+      kibana
+        version: '^9.4.0'
       agent:
         version: '^9.3.0'
     ```

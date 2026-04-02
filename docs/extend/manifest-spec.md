@@ -156,6 +156,19 @@ spec:
               description: Kibana versions compatible with this package.
               examples:
                 - ">=7.9.0"
+        agent:
+          description: Elastic Agent conditions
+          type: object
+          additionalProperties: false
+          properties:
+            version:
+              type: string
+              description: >
+                Elastic Agent versions compatible with this package.
+                If specified, Agents incompatible with the version condition will not run the integration.
+              examples:
+                - "^8.13.0"
+                - "^9.3.0"
     description:
       description: >
         A longer description of the package. It should describe, at least all the kinds of
@@ -637,6 +650,8 @@ versions:
         path: "/definitions/deployment_modes/properties/agentless/properties/is_default"
       - op: remove
         path: "/definitions/deployment_modes/properties/agentless/properties/resources"
+      - op: remove
+        path: "/definitions/conditions/properties/agent"
   - before: 3.3.1
     patch:
       - op: remove

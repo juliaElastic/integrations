@@ -650,8 +650,6 @@ versions:
         path: "/definitions/deployment_modes/properties/agentless/properties/is_default"
       - op: remove
         path: "/definitions/deployment_modes/properties/agentless/properties/resources"
-      - op: remove
-        path: "/definitions/conditions/properties/agent"
   - before: 3.3.1
     patch:
       - op: remove

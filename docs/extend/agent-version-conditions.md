@@ -63,7 +63,7 @@ program: |
 {{/semverSatisfies}}
 ```
 
-Here the `program:` block is only included in the rendered config when the agent version is `^9.3.0`. Agents on older versions receive the configuration without the `program:` key.
+Here the `program:` block is only included in the rendered config when the agent version is `^9.3.0`. Agents on earlier versions receive the configuration without the `program:` key.
 
 
 ## How Fleet handles agent version conditions [how-fleet-handles-agent-version-conditions]
@@ -71,7 +71,7 @@ Here the `program:` block is only included in the rendered config when the agent
 ### Package-level conditions
 
 When a policy is created or updated, Fleet evaluates the `conditions.agent.version` constraint against the versions of enrolled agents in the policy. If an agent does not satisfy the constraint, Fleet surfaces a warning in the Fleet UI indicating the version mismatch.
-The policy assigned to the older version of agents will not include the incompatible integrations.
+The policy assigned to the earlier version of agents will not include the incompatible integrations.
 
 ### Input template-level conditions
 
